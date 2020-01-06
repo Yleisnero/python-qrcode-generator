@@ -52,4 +52,4 @@ def qr_codes_svg_box_size(begin, end, box_size):
 
 
 if __name__ == '__main__':
-	qr_codes_svg_box_size(1, 101, 50)
+	qr_codes_svg_box_size(1, 101, 35)

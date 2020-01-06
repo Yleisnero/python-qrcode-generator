@@ -1,6 +1,6 @@
-import sys
 import qrcode
 import qrcode.image.svg
+
 
 def qr_codes_png(begin, end):
 	for i in range(begin, end):
@@ -49,3 +49,7 @@ def qr_codes_svg_box_size(begin, end, box_size):
 		file_name = str(i) + ".svg"
 		img = qr.make_image(fill_color ="black", back_color="white", image_factory=factory)
 		img.save(file_name)
+
+
+if __name__ == '__main__':
+	qr_codes_svg_box_size(1, 101, 50)

@@ -9,13 +9,13 @@ Using python-qrcode: https://pypi.org/project/qrcode & https://github.com/lincol
 - Open your Terminal and change your working directory to the directory where you want to generate your QRCodes
 - Run the generate_qrcodes.py file with your arguments
 
-## Supported arguments
-|  Argument  |             Description            | Position when calling |
-|:----------:|:----------------------------------:|:---------------------:|
-|  File Type |        Can be "png" or "svg"       |           1           |
-|    First   |         First QRCode number        |           2           |
-|    Last    |         Last QRCode number         |           3           |
-| [Box Size] | Box Size for the generated QRCodes |           4           |
+## Arguments
+|  Argument  |             Description            | Position |
+|:----------:|:----------------------------------:|:--------:|
+|  File Type |        Can be "png" or "svg"       |     1    |
+|    First   |         First QRCode number        |     2    |
+|    Last    |         Last QRCode number         |     3    |
+| [Box Size] | Box Size for the generated QRCodes |     4    |
 
 ## Examples
 ### Generate QRCodes for the numbers 1 to 10 as png
@@ -30,3 +30,8 @@ python3 generate_qrcodes.py "svg" 42 42
 ```
 python3 generate_qrcodes.py "png" 1111 2222 42
 ```
+### Generate QRCodes from other directory
+```
+python3 storehere/python-qrcode-generator/generate_qrcodes.py "png" 1 10
+```
+The QRCodes are going to be stored in your current directory e.g. storehere/

@@ -1,5 +1,6 @@
 import qrcode
 import qrcode.image.svg
+import sys
 
 
 def qr_codes_png(begin, end):
@@ -52,4 +53,31 @@ def qr_codes_svg_box_size(begin, end, box_size):
 
 
 if __name__ == '__main__':
-	qr_codes_svg_box_size(1, 101, 35)
+	sys_argv_count = len(sys.argv) - 1
+	
+	file_type = sys.argv[1]
+	begin = int(sys.argv[2])
+	end = int(sys.argv[3])
+
+	print(f"File Type: {file_type}")
+	print(f"Begin: {begin}")
+	print(f"End: {end}")
+
+	if(file_type == "png"):
+		if(sys_argv_count == 3):
+			qr_codes_png(begin, end)
+		elif(sys_argv_count == 4):
+			box_size = int(sys.argv[4])
+			qr_codes_png_box_size(begin, end, box_size)
+		else:
+			print("Invalid number of arguments")
+	elif(file_type == "svg"):
+		if(sys_argv_count == 3):
+			qr_codes_svg(begin, end)
+		elif(sys_argv_count == 4):
+			box_size = int(sys.argv[4])
+			qr_codes_svg_box_size(begin, end, box_size)
+		else: 
+			print("Invalid number of arguments")
+	else:
+		print("Invalid file type")

@@ -19,7 +19,7 @@ Using python-qrcode: https://pypi.org/project/qrcode & https://github.com/lincol
 - The default Box Size is is 10 (== 1mm per rectangle)
 
 ## Examples
-### Generate QRCodes for the numbers 1 to 10 as png
+### Generate QRCodes for the numbers 1 to 10 as pngs
 ```
 python3 generate_qrcodes.py "png" 1 10
 ```
@@ -27,7 +27,7 @@ python3 generate_qrcodes.py "png" 1 10
 ```
 python3 generate_qrcodes.py "svg" 42 42
 ```
-### Generate QRCodes for the numbers 1111 to 2222 as png with a box size of 42
+### Generate QRCodes for the numbers 1111 to 2222 as pngs with a box size of 42
 ```
 python3 generate_qrcodes.py "png" 1111 2222 42
 ```

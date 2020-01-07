@@ -10,6 +10,9 @@ def qr_codes_png(begin, end):
 		file_type = "PNG"
 		img.save(file_name, file_type)
 
+	count = end - begin
+	print(f"{count} QRCodes generated")
+
 
 def qr_codes_png_box_size(begin, end, box_size):
 	qr = qrcode.QRCode(
@@ -17,7 +20,8 @@ def qr_codes_png_box_size(begin, end, box_size):
     error_correction=qrcode.constants.ERROR_CORRECT_L,
     box_size=box_size,
     border=4,
-)
+	)
+
 	for i in range(begin, end):
 		qr.add_data(i)
 		qr.make(fit=True)
@@ -26,6 +30,9 @@ def qr_codes_png_box_size(begin, end, box_size):
 		img = qr.make_image(fill_color ="black", back_color="white")
 		img.save(file_name, file_type)
 
+	count = end - begin
+	print(f"{count} QRCodes generated")
+
 
 def qr_codes_svg(begin, end):
 	factory = qrcode.image.svg.SvgImage
@@ -33,6 +40,9 @@ def qr_codes_svg(begin, end):
 		img = qrcode.make(i, image_factory=factory)
 		file_name = str(i) + ".svg"
 		img.save(file_name)
+
+	count = end - begin
+	print(f"{count} QRCodes generated")
 
 
 def qr_codes_svg_box_size(begin, end, box_size):
@@ -51,6 +61,9 @@ def qr_codes_svg_box_size(begin, end, box_size):
 		img = qr.make_image(fill_color ="black", back_color="white", image_factory=factory)
 		img.save(file_name)
 
+	count = end - begin
+	print(f"{count} QRCodes generated")
+
 
 if __name__ == '__main__':
 	sys_argv_count = len(sys.argv) - 1
@@ -60,8 +73,11 @@ if __name__ == '__main__':
 	end = int(sys.argv[3])
 
 	print(f"File Type: {file_type}")
-	print(f"Begin: {begin}")
-	print(f"End: {end}")
+	print(f"First: {begin}")
+	print(f"Last: {end}")
+
+	# Increment end to generate QRCodes until end - 1
+	end = end + 1
 
 	if(file_type == "png"):
 		if(sys_argv_count == 3):
